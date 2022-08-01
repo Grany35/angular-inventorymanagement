@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Ürün Ekleme Formu</h1>
+<button mat-raised-button color="basic" class="me-3" (click)="openCategoryAdd()">
+  <mat-icon  class="me-2">playlist_add</mat-icon>
+  Kategori Ekle
+</button>
+<div mat-dialog-content class="mt-2">
+  <form [formGroup]="addForm">
+    <mat-form-field appearance="outline" >
+      <mat-label>Ürün Adı</mat-label>
+      <input formControlName="productName" matInput placeholder="Ad">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ürün Kategorisi</mat-label>
+      <mat-select formControlName="productCategoryId" placeholder="Kategory" >
+        <mat-option *ngFor="let category of categories" value="{{category.categoryId}}">{{category.categoryName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>Ürün Adet Fiyatı</mat-label>
+      <input formControlName="price" matInput placeholder="Fiyat">
+      <mat-icon matSuffix>currency_lira</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>Ürün Lokasyonu</mat-label>
+      <input formControlName="location" matInput placeholder="Lokasyon">
+      <mat-icon matSuffix>location_on</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>Ürün Barkod Numarası</mat-label>
+      <input formControlName="barcodeNumber" matInput placeholder="Barkod">
+      <mat-icon matSuffix>qr_code_2</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>Ürün Markası</mat-label>
+      <input formControlName="brand" matInput placeholder="Marka">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>Ürün Stoğu</mat-label>
+      <input formControlName="stock" matInput placeholder="Stok">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+<button mat-raised-button color="primary"  (click)="addProduct()" >Ekle</button>
+<button mat-raised-button color="warn" id="closeDialog" mat-dialog-close>Kapat</button>
+</div>

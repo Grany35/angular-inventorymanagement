@@ -1,0 +1,20 @@
+<mat-toolbar class="navbar">
+  <button mat-icon-button (click)="goHome()" class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon class="asd">home</mat-icon>
+  </button>
+  <span style="color: white;">Envanter Takip Sistemi</span>
+  <span class="example-spacer"></span>
+
+  <button mat-raised-button color="warn" class="me-3" (click)="openCustomerDialog()">
+    <mat-icon class="me-2">add_box</mat-icon>
+    Ürün Ekle
+  </button>
+  <button mat-raised-button color="warn" class="me-3" (click)="openDialog()">
+    <mat-icon class="me-2">group_add</mat-icon>
+    Müşteri Ekle
+  </button>
+  <button mat-raised-button color="warn" class="me-3" (click)="openSaleDialog()">
+    <mat-icon class="me-2">send</mat-icon>
+    Satış Yap
+  </button>
+</mat-toolbar>

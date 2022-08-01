@@ -1,0 +1,45 @@
+<h1 mat-dialog-title>Satış  Formu</h1>
+<div mat-dialog-content class="mt-2">
+  <form [formGroup]="addForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ürün</mat-label>
+      <mat-select formControlName="productId" placeholder="Ürün seçin" >
+        <mat-option *ngFor="let product of products" value="{{product.productId}}">{{product.productName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Müşteri</mat-label>
+      <mat-select formControlName="customerId" placeholder="Müşteri seçin" >
+        <mat-option *ngFor="let customer of customers" value="{{customer.customerId}}">{{customer.customerName}} / {{customer.phone}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>Adet/Miktar</mat-label>
+    <mat-select formControlName="quantity" placeholder="Adet seçiniz" [(ngModel)]="selectedValue" >
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+      <mat-option value="3">3</mat-option>
+      <mat-option value="4">4</mat-option>
+      <mat-option value="5">5</mat-option>
+      <mat-option value="6">6</mat-option>
+      <mat-option value="7">7</mat-option>
+    </mat-select>
+    </mat-form-field>
+
+
+
+  </form>
+</div>
+<div class="row">
+<div mat-dialog-actions class="col-lg-4">
+  <button mat-raised-button color="accent" (click)="saleDetail()">Satış Detayları Sayfası</button>
+</div>
+<div mat-dialog-actions class="col-lg-8" [align]="'end'">
+<button mat-raised-button color="primary" (click)="addsale()" >Satışı yap</button>
+<button mat-raised-button color="warn" id="closeSaleDialog" mat-dialog-close>Kapat</button>
+</div>
+</div>
+
