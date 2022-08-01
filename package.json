@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "deploy": "ng build -sm -ec -bh /InventoryManagement-Angular/ & ngh –no-silent",
+    
     "test": "ng test"
   },
   "private": true,
